@@ -1,10 +1,15 @@
 import React from 'react';
 import { useTracker } from 'meteor/react-meteor-data';
 import { LinksCollection } from '../api/links';
+import { PeopleCollection } from '../api/PeopleCollection';
 
 export const Info = () => {
   const links = useTracker(() => {
     return LinksCollection.find().fetch();
+  });
+
+  const people = useTracker(() => {
+    return PeopleCollection.find().fetch();
   });
 
   return (
